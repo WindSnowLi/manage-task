@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>交作业 | 主页</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../css/adminlte.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- 标记左侧菜单样式 -->
+  <link rel="stylesheet" href="../css/mycss/sign.css">
+  <!-- 分页样式 -->
+  <link rel="stylesheet" href="../css/mycss/page.css">
+  <!-- 范围时间样式 -->
+  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="javascript:void(0)" role="button"><i
+              class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a id="top_nav" href="./homePage.html?url=clazzDashboard" class="nav-link">Home</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Messages Dropdown Menu -->
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="javascript:void(0)" role="button"><i
+              class="fas fa-th-large"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="./homePage.html" class="brand-link">
+        <img src="../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">交作业</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img id="left_menu_userHead" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a id="left_menu_userName" href="javascript:void(0)" class="d-block"></a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <div id="left_menu_task_tree_back"></div>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="main_content" class="content-wrapper">
+      <!-- Main content -->
+      <!-- 主窗口内容位置 -->
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+      <div class="p-3">
+        <h5>Title</h5>
+        <p>Sidebar content</p>
+      </div>
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="float-right d-none d-sm-inline">
+        额滴个肾
+      </div>
+      <!-- Default to the left -->
+      <strong>WindSnowLi</strong>
+    </footer>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../js/demo.js"></script>
+  <!-- 引入工具js -->
+  <script src="../js/myjs/utils.js"></script>
+  <!-- 引入专属js -->
+  <script src="../js/myjs/work.js"></script>
+  <!-- 引入分页js -->
+  <script src="../js/myjs/page.js"></script>
+  <!-- 下载工具 -->
+  <script src="../js/FileSaver.js-2.0.4/FileSaver.min.js"></script>
+  <script src="../js/myjs/downFile.js"></script>
+  <!-- 时间工具 -->
+  <script src="../js/date.format.js"></script>
+  <script src="../plugins/daterangepicker/moment.min.js"></script>
+  <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- 加载任务线 -->
+  <script src="../js/myjs/loadTaskLine.js"></script>
+  <!-- 加载个人设置 -->
+  <script src="../js/myjs/loadMyProfile.js"></script>
+  <!-- 管理任务界面 -->
+  <script src="../js/myjs/loadManageTask.js"></script>
+  <script src="../js/myjs/loadManageAddTask.js"></script>
+
+
+
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../plugins/raphael/raphael.min.js"></script>
+  <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../plugins/chart.js/Chart.min.js"></script>
+  <!-- PAGE SCRIPTS -->
+  <script src="../js/pages/dashboard2.js"></script>
+  <!-- 仪表盘 -->
+  <script src="../js/myjs/loadDashboard.js"></script>
+
+  <!-- 首页 -->
+  <script src="../js/myjs/homePage.js"></script>
+
+
+</body>
+
+</html>

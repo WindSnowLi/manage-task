@@ -1,0 +1,83 @@
+<!-- Main content -->
+<section class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">编辑任务</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <form id="editClazzTask_form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="editTask_inputName">任务主题</label>
+                            <input type="text" id="editTask_inputName" name="taskTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="editTask_inputDescription">任务描述</label>
+                            <textarea id="editTask_inputDescription" name="taskContent" class="form-control"
+                                rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editTask_reservationTime">起止时间</label>
+                            <input type="text" name="reservationTime" class="form-control pull-right col-md-6"
+                                id="editTask_reservationTime">
+                        </div>
+                    </div>
+                </form>
+
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button id="editTask_button" type="button" value="555" onclick="editTaskPostForm(this)"
+                class="btn btn-success float-right">保存更改</button>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+<script>
+    $('#editTask_reservationTime').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+            applyLabel: '确认',
+            cancelLabel: '取消',
+            fromLabel: '起始时间',
+            toLabel: '结束时间',
+            customRangeLabel: '自定义',
+            format: "YYYY-MM-DD hh:mm:ss",
+            daysOfWeek: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+            monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            firstDay: 1,
+            separator: ' 至 '
+        },
+        drops: 'up', // 日期选择框的弹出位置
+    });
+    function editTaskPostForm(btn) {
+        let obj = serializeJsonForm("editClazzTask_form");
+        let reservationTime = obj['reservationTime'];
+        obj['taskStartDate'] = reservationTime.split(' 至 ')[0];
+        obj['taskEndDate'] = reservationTime.split(' 至 ')[1];
+        delete obj.reservationTime;
+        obj['lastChangeUserId'] = getUserId();
+        obj['taskId'] = btn.getAttribute('value');
+        _submitPost(obj, getUrl() + "/task/updateTaskJson", function (results) {
+            if (results.code == 1) {
+                alert("修改成功");
+            } else {
+                alert("修改失败");
+            }
+        });
+    }
+</script>

@@ -1,0 +1,80 @@
+/* 分页组件的共同样式 */
+div.pages{
+    text-align: center;
+    color: #999999;
+    padding: 20px 20px 40px 0;
+}
+div.pages a{
+    text-decoration: none;
+}
+div.pages a,div.pages span{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* 当前页按钮 */
+.current{
+    color: #ffffff;
+    background: #1ABC9C;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+}
+
+/* 非当前页的按钮 */
+.pageNum{
+    color: #666;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+
+/* 当前页的下一页为当前页撑开空间 */
+.nextpage{
+    margin: 0 5px;
+}
+
+/* 上一页按钮,下一页按钮,第一页和最后一页时禁止点击的上一页按钮和下一页按钮 */
+.preBtn,.nextBtn,.disabled{
+    color: #666;
+    background: #fff;
+    width: 88px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 3px;
+}
+
+/* 翻页的输入框 */
+.pageInput{
+    width: 50px;
+    height: 42px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #E6E6E6;
+    margin: 0 12px;
+    border-radius: 3px;
+    color: #666;
+}
+
+/* 确定翻页按钮 */
+.changePage{
+    width: 48px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #E6E6E6;
+    margin-left: 10px;
+    cursor:pointer;
+    border-radius: 3px;
+    background: #fff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}

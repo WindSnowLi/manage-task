@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    name: workserver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    initialSize: 2
+    maxActive: 300
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 200
+  thymeleaf:
+    #thymeleaf 模板配置
+    #非严格检查
+    mode: LEGACYHTML5
+
+    #缓冲的配置
+    cache: false
+    check-template: true
+    check-template-location: true
+    #开启MVC thymeleaf 视图解析
+    enabled: true
+    encoding: utf-8
+
+    prefix: classpath:/templates/
+    suffix: .html
+  debug: true
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#配置Mapper.xml映射文件
+mybatis:
+  mapper-locations: classpath*:mybatis/mapper/*.xml

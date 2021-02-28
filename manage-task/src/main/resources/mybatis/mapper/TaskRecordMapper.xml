@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.windsnowli.workserver.mapper.TaskRecordMapper">
+    <resultMap id="findTaskRecordMap" type="com.windsnowli.workserver.entity.TaskRecord">
+        <id property="recordId" column="recordId"/>
+        <result property="taskId" column="taskId"/>
+
+        <result property="userId" column="userId"/>
+        <result property="submissionTime" column="submissionTime"/>
+
+        <collection property="student" ofType="com.windsnowli.workserver.entity.Student" resultMap="studentMap"/>
+    </resultMap>
+
+    <resultMap id="studentMap" type="com.windsnowli.workserver.entity.Student">
+
+        <id property="userId" column="userId"/>
+        <result property="studentAcademyId" column="studentAcademyId"/>
+        <result property="studentMajorId" column="studentMajorId"/>
+        <result property="studentClazzId" column="studentClazzId"/>
+        <result property="userId" column="userId"/>
+        <result property="userNumber" column="userNumber"/>
+        <result property="userName" column="userName"/>
+        <result property="userEmail" column="userEmail"/>
+        <result property="userPower" column="userPower"/>
+        <result property="userNickname" column="userNickname"/>
+        <result property="userHeadPicture" column="userHeadPicture"/>
+        <result property="userCreateTime" column="userCreateTime"/>
+        <result property="userIdentity" column="userIdentity"/>
+    </resultMap>
+
+    <select id="findTaskRecord" resultMap="findTaskRecordMap">
+        select *
+        from student
+                 inner join (select *
+                             from user
+                                      inner join (select *
+                                                  from taskrecord
+                                                  where taskrecord.taskId = #{taskId}
+                                                    and taskrecord.userId = #{userId}
+                                                  ORDER BY taskrecord.submissionTime DESC) as t1
+                                                 USING (userId)
+                             where user.userId = t1.userId) as t2 USING (userId)
+        where student.userId = t2.userId
+    </select>
+</mapper>

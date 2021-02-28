@@ -1,0 +1,28 @@
+server:
+  port: 43999
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 账号@qq.com
+    password: 密码
+    default-encoding: UTF-8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.NonRegisteringDriver
+    url: jdbc:mysql://127.0.0.1/managework?serverTimezone=GMT%2B8
+    username: root
+    password: root
+aliyunoss:
+  # 请填写您的AccessKeyId。
+  accessId: xxxxxxxxxx
+  # 请填写您的AccessKeySecret。
+  accessKey: xxxxxxxxxxxxx
+  # 请填写您的 endpoint。
+  endpoint: xxxxxxxxxxxxxxxxx
+  # 请填写您的 bucketname 。
+  bucket: xxxxxxxxxxxxx
+  # host的格式为 bucketname.endpoint
+  host: http://${aliyunoss.bucket}.${aliyunoss.endpoint}
+  # callbackUrl为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
+  callbackUrl: http://127.0.0.1:${port}/api/file/callback
+  # 用户上传文件时指定的前缀。   预计    work-dir/task/academy/academyId/taskId/userId_taskId_filename    work-dir/task/major/majorId/taskId/userId_taskId_filename    work-dir/task/clazz/clazzId/taskId/userId_taskId_filename
+  dir: work-dir/
